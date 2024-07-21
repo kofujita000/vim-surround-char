@@ -40,7 +40,7 @@ function! DeleteSurroundWithChar()
 	endif
 
 	let l:open_found = -1
-	let l:col = l:current_pos
+	let l:col = l:current_pos - 1
 	while l:col >= 1
 		let l:col -= 1
 		if l:line[l:col] == l:open_char
@@ -68,7 +68,7 @@ function! DeleteSurroundWithChar()
 		return
 	endif
 
-	execute "normal! " . (l:open_found) . "|"
+	execute "normal! " . (l:open_found + 1) . "|"
 	execute "normal! \"_x"
 
 	execute "normal! " . (l:close_found) . "|"
