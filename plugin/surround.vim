@@ -55,7 +55,7 @@ function! DeleteSurroundWithChar()
 	endif
 
 	let l:close_found = -1
-	let l:col = l:current_pos
+	let l:col = l:current_pos - 1
 	while l:col < l:line_len
 		let l:col += 1
 		if l:line[l:col] == l:close_char
